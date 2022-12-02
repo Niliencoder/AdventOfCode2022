@@ -1,3 +1,6 @@
 # AdventOfCode2022
 My solutions for [Advent of Code 2022](https://adventofcode.com/2022) made with Kotlin and IntelliJ.
+
 The input files are in the resouces folder as a .txt.
+
+Note: I will update the the solutions if i come up with a better one
