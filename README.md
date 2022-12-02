@@ -3,4 +3,4 @@ My solutions for [Advent of Code 2022](https://adventofcode.com/2022) made with 
 
 The input files are in the resouces folder as a .txt.
 
-Note: I will update the the solutions if i come up with a better one
+Note: I will update the solutions if i come up with a better one
