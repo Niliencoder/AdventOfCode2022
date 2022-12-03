@@ -24,30 +24,26 @@ fun main() {
 }
 
 fun findDuplicate(firstHalf: String, secondHalf: String): Int{
-    var priority = 0
-
     for(c in firstHalf){
         if(secondHalf.contains(c)){
-            priority = getPriority(c)
+            return calcPriority(c)
         }
     }
 
-    return priority
+    return -1 //Should never reach this
 }
 
 fun findBadge(rucksacks: List<String>): Int{
-    var priority = 0
-
     for(c in rucksacks[0]){
         if(rucksacks[1].contains(c) && rucksacks[2].contains(c)){
-            priority = getPriority(c)
+            return calcPriority(c)
         }
     }
 
-    return priority
+    return -1 //Should never reach this
 }
 
-fun getPriority(c: Char): Int{
+fun calcPriority(c: Char): Int{
     return if(c.isUpperCase()){
         c.code - 'A'.code + 27
     }else{
