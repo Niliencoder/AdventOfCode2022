@@ -15,9 +15,7 @@ fun main() {
         val lower2 = splitted[1].split("-")[0].toInt()
         val upper2 = splitted[1].split("-")[1].toInt()
 
-        if(lower1 <= lower2 && upper1 >= upper2 ){
-            sum1++
-        }else if (lower1 >= lower2 && upper1 <= upper2){
+        if(lower1 <= lower2 && upper1 >= upper2 || lower1 >= lower2 && upper1 <= upper2){
             sum1++
         }
 
