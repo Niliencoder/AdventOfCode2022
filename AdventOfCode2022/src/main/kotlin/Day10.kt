@@ -7,9 +7,7 @@ fun main() {
     val input: List<String> = Files.readAllLines(Path("src/main/resources/input10.txt"))
     var cycle = 0
     var x = 1
-    val crtHeight = 6
-    val crtWidth = 40
-    val crt: Array<CharArray> = Array(crtHeight){CharArray(crtWidth){'.'}}
+    val crt: Array<CharArray> = Array(6){CharArray(40){'.'}}
 
     for(i in input){
         val splitted = i.split(" ")
@@ -48,7 +46,6 @@ fun drawCrt(crt: Array<CharArray>, cycle: Int, x: Int){
     if (col == x || col == x-1 || col == x+1){
         crt[row][col] = '#'
     }
-
 }
 
 fun printCrt(crt: Array<CharArray>){
