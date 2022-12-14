@@ -6,11 +6,6 @@ private class Monkey(val items: MutableList<Long>, val operation: String, val di
     var numOfInspected = 0L
 
     fun doOperation(){
-        var supermodulo = 0L
-        for(item in items){
-            supermodulo += item
-        }
-
         var splitted = operation.split(" ")
         val tmpItems = items.toList()
         for(item in tmpItems){
@@ -30,9 +25,10 @@ private class Monkey(val items: MutableList<Long>, val operation: String, val di
             }
 
             if(isPart1){
-                value = value / 3L
+                value /= 3L
             }else{
                 //Do math stuff
+                value %= 9699690//96577
             }
 
             if(value%divisible == 0L){
@@ -47,6 +43,7 @@ private class Monkey(val items: MutableList<Long>, val operation: String, val di
 }
 
 private var monkeys: MutableList<Monkey> = mutableListOf()
+private var monkeys2: MutableList<Monkey> = mutableListOf()
 private var isPart1 = true
 
 fun main() {
@@ -79,7 +76,8 @@ fun main() {
         var forFalse: Int = splitted[4].trim().toInt()
         //println(forFalse)
 
-        monkeys.add(Monkey(items, operation, divisible, forTrue, forFalse))
+        monkeys.add(Monkey(items.toMutableList(), operation, divisible, forTrue, forFalse))
+        monkeys2.add(Monkey(items.toMutableList(), operation, divisible, forTrue, forFalse))
     }
 
     for(round in 0 until 20){
@@ -92,7 +90,7 @@ fun main() {
     println(tmp[0].numOfInspected * tmp[1].numOfInspected)
 
     isPart1 = false
-
+    monkeys = monkeys2
     for(monkey in monkeys){
         monkey.numOfInspected = 0L
     }
